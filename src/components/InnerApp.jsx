@@ -1,15 +1,19 @@
 import React, { Component } from "react";
-import "../App.css";
+// import "../App.css";
 import Header from "./Header";
 import Main from "./Main";
+import { Box } from 'grommet';
 
 class InnerApp extends Component {
   render() {
     return (
-      <div className="App">
+      <Box
+        full={true}
+        height="100vh"
+      >
         <Header />
         <Main />
-      </div>
+      </Box>
     );
   }
 }

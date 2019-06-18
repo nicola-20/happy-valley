@@ -1,22 +1,22 @@
 import React, { Component } from "react";
-import "./App.css";
-// import Header from "./components/Header";
-// import Main from "./components/Main";
+import { Grommet } from 'grommet';
+// import "./App.css";
 import SplashScreen from "./components/SplashScreen";
 import { Router } from "@reach/router";
 import InnerApp from "./components/InnerApp";
+import { theme } from './styling/theme.js'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        {/* <Header />
-        <Main /> */}
+      <Grommet theme={theme}>
+      {/* <div className="App"> */}
         <Router>
-        <SplashScreen path='/'/>
-        <InnerApp path='/*' />
+          <SplashScreen path='/' />
+          <InnerApp path='/*' />
         </Router>
-      </div>
+        {/* </div> */}
+      </Grommet>
     );
   }
 }
