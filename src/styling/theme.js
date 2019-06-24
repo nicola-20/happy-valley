@@ -721,11 +721,13 @@ exports.theme =
       "step": 20
     },
     "tab": {
+      "width": "25vw",
       "active": {
         "color": "text"
       },
+      "background": "neutral-4",
       "border": {
-        "side": "bottom",
+        "side": "all",
         "size": "small",
         "color": {
           "dark": "accent-1",
@@ -756,7 +758,10 @@ exports.theme =
         "horizontal": "small"
       },
       "pad": {
-        "bottom": "xsmall"
+        "bottom": "xsmall",
+        "top": "xsmall",
+        "left": "xsmall",
+        "right": "xsmall"
       }
     },
     "tabs": {

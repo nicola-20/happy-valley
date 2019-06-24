@@ -1,10 +1,11 @@
 import React from 'react';
+import {Box } from 'grommet'
 
 const Schedule = () => {
   return (
-    <div>
-      Schedule
-    </div>
+    <Box background="status-ok" full={true}>
+      SCHEDULE
+    </Box>
   );
 };
 

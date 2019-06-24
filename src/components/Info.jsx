@@ -1,10 +1,11 @@
 import React from 'react';
+import {Box } from 'grommet'
 
 const Info = () => {
   return (
-    <div>
-      Info
-    </div>
+    <Box background="neutral-4" full={true}>
+      INFO
+    </Box>
   );
 };
 
