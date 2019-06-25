@@ -3,7 +3,7 @@ import { Grommet, Box, Layer, Button, Image } from "grommet";
 
 const Map = () => {
   return (
-    <Box background="status-warning" full={true} height="90vh">
+    <Box background="status-warning" fill={true} height="93vh">
       MAP
     </Box>
   );

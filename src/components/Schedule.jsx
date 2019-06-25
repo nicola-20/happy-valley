@@ -3,7 +3,7 @@ import {Box } from 'grommet'
 
 const Schedule = () => {
   return (
-    <Box background="status-ok" full={true}>
+    <Box background="status-ok" fill={true}>
       SCHEDULE
     </Box>
   );

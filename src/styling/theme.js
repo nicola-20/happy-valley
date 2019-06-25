@@ -229,6 +229,9 @@ exports.theme =
       }
     },
     "accordion": {
+      "heading": {
+        "level": 4
+      },
       "icons": {}
     },
     "anchor": {

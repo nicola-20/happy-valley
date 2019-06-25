@@ -1,12 +1,10 @@
 import React from 'react';
-import styled from 'styled-components'
-import { Grommet, Tabs, Tab, Box, ThemeContext, Button } from 'grommet'
+import { Box as TabBar, Box, ThemeContext, Button as Tab } from 'grommet'
 import { Icons } from 'grommet-icons'
-import Social from './Social';
-import Map from './Map';
 import Schedule from './Schedule';
+import Social from './Social';
 import Info from './Info';
-import { theme } from "../styling/theme";
+import Map from './Map';
 
 const tabs = [
   { title: 'map', color: "status-warning", content: <Map /> },
@@ -18,58 +16,20 @@ const tabs = [
 const TabApp = () => {
   const [activeIndex, setActiveIndex] = React.useState(0);
   return (
-    <Box>
-      <Box direction="row">
+    <Box full={true} height="100vh">
+      <TabBar direction="column-responsive" margin="0.2vh 0px 0px 0px" width="100vw" justify="around" height="7vh">
         {tabs.map((tab, index) => {
           return (
-            <Button
-              label={tab.title}
-              // alignSelf="center"
-              hoverIndicator={true}
-              margin={
-                { vertical: "small" }
-              }
-              primary={true}
-              onClick={() => setActiveIndex(index)}
-            />
+            <ThemeContext.Extend value={{ button: { border: { radius: "13px 13px 0px 0px" }, padding: { horizontal: "0px" }, color: "white" } }}>
+              <Tab label={tab.title} hoverIndicator={true} primary={true} color={tab.color} onClick={() => setActiveIndex(index)} />
+            </ThemeContext.Extend>
           )
         })}
-      </Box>
-      <Box>
+      </TabBar>
+      {/* <Box margin="0px" height="93vh"> */}
         {tabs[activeIndex].content}
-
-      </Box>
+      {/* </Box> */}
     </Box>
-    // <Tabs height="10vh">
-    //   {/* <ThemeContext.Extend
-    //     value={{ tab: { background: "status-warning", color: "white" } }}
-    //   > */}
-    //     <Tab title="map">
-    //       <Map />
-    //     </Tab>
-    //   {/* </ThemeContext.Extend> */}
-    //   {/* <ThemeContext.Extend
-    //     value={{ tab: { background: "status-ok", color: "white" } }}
-    //   > */}
-    //     <Tab title="schedule">
-    //       <Schedule />
-    //     </Tab>
-    //   {/*</ThemeContext.Extend>*/}
-    //   {/* <ThemeContext.Extend
-    //     value={{ tab: { background: "neutral-3", color: "white" } }}
-    //   > */}
-    //     <Tab title="social">
-    //       <Social />
-    //     </Tab>
-    //   {/*</ThemeContext.Extend>*/}
-    //   {/* <ThemeContext.Extend
-    //     value={{ tab: { background: "neutral-4", color: "white" } }}
-    //   > */}
-    //     <Tab title="info">
-    //       <Info />
-    //     </Tab>
-    //   {/*</ThemeContext.Extend>*/}
-    // </Tabs>
   );
 };
 

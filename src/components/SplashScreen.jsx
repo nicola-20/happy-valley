@@ -1,28 +1,22 @@
 import React from 'react';
-import { Link } from '@reach/router'
-import { Box, Button, Grommet, Image } from 'grommet';
-// import image from '../../'
+import { Box, Button, Image } from 'grommet';
 
-const SplashScreen = () => {
+const SplashScreen = (props) => {
+  const { hideSplashScreen } = props
   return (
     <Box
       full={true}
       height="100vh"
-      // border="all"
     >
-      < Button
+      <Button
         alignSelf="center"
         label="Enter App"
-        onClick={() => { }}
-        href="/map"
+        onClick={hideSplashScreen}
         primary={true}
         hoverIndicator={true}
         margin="medium"
       />
-      <Image
-        fit="contain"
-        src="/assets/campaign2019.jpg"
-      />
+      <Image fit="contain" src="/assets/campaign2019.jpg" />
     </Box>
   );
 };

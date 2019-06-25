@@ -1,49 +1,30 @@
 import React, { Component } from "react";
-import { Grommet, Box, Layer, Button, Image } from "grommet";
-// import "./App.css";
+import { Grommet, Layer } from "grommet";
 import { theme } from "./styling/theme.js";
 import TabApp from "./components/TabApp";
+import SplashScreen from "./components/SplashScreen";
+import "./App.css";
 
 class App extends Component {
   state = {
-    showSplashscreen: true
+    showSplashScreen: true
   };
   render() {
-    const { showSplashscreen } = this.state;
+    const { showSplashScreen } = this.state;
     return (
-      <Grommet theme={theme} cssVars={true}>
-        <Box full={true} height="100vh">
-
-        {/* App */}
-          <Box full={true} height="100vh">
-            <TabApp />
-          </Box>
-
-          {/* SplashScreen */}
-          {showSplashscreen && (
-            <Layer animate={true} full={true} modal={true} responsive={true}>
-              <Box
-                full={true}
-                height="100vh"
-                // border="all"
-              >
-                <Button
-                  alignSelf="center"
-                  label="Enter App"
-                  onClick={() => this.setState({ showSplashscreen: false })}
-                  primary={true}
-                  hoverIndicator={true}
-                  margin="medium"
-                />
-                <Image fit="contain" src="/assets/campaign2019.jpg" />
-              </Box>
-            </Layer>
-          )}
-
-        </Box>
+      <Grommet theme={theme} full={true}>
+          <TabApp />
+        {showSplashScreen && (
+          <Layer full={true} modal={true} responsive={true}>
+            <SplashScreen hideSplashScreen={this.hideSplashScreen} />
+          </Layer>
+        )}
       </Grommet>
     );
   }
+  hideSplashScreen = () => {
+    this.setState({ showSplashScreen: false });
+  };
 }
 
 export default App;

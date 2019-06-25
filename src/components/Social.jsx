@@ -3,7 +3,7 @@ import { Box } from 'grommet'
 
 const Social = () => {
   return (
-    <Box background="neutral-3" full={true}>
+    <Box background="neutral-3" fill={true}>
       SOCIAL
     </Box>
   );
