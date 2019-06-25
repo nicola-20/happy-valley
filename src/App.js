@@ -13,7 +13,7 @@ class App extends Component {
     const { showSplashScreen } = this.state;
     return (
       <Grommet theme={theme} full={true}>
-          <TabApp />
+        <TabApp />
         {showSplashScreen && (
           <Layer full={true} modal={true} responsive={true}>
             <SplashScreen hideSplashScreen={this.hideSplashScreen} />

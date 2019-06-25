@@ -1,11 +1,16 @@
-.gVXPQd, .hlpGmZ, .dMYRjh, .hMzDbc {
+.tabButton {
   width: 24.5vw;
 }
 
-/* .StyledButton-sc-323bzc-0 {
-  width: 24.3vw;
+.infoButton {
+  width: 40vw;
 }
 
-.fBswam {
-  width: 40vw;
-} */
+p {
+  text-align: justify;
+}
+
+.mission {
+  border-top: solid 2px;
+  padding-top: 10px;
+}

@@ -7,10 +7,10 @@ import Info from './Info';
 import Map from './Map';
 
 const tabs = [
-  { title: 'map', color: "status-warning", content: <Map /> },
-  { title: 'schedule', color: "status-ok", content: <Schedule /> },
-  { title: 'social', color: "neutral-3", content: <Social /> },
-  { title: 'info', color: "neutral-4", content: <Info /> }
+  { title: 'Map', color: "status-warning", content: <Map /> },
+  { title: 'Schedule', color: "status-ok", content: <Schedule /> },
+  { title: 'Social', color: "neutral-3", content: <Social /> },
+  { title: 'Info', color: "neutral-4", content: <Info /> }
 ]
 
 const TabApp = () => {
@@ -21,14 +21,12 @@ const TabApp = () => {
         {tabs.map((tab, index) => {
           return (
             <ThemeContext.Extend value={{ button: { border: { radius: "13px 13px 0px 0px" }, padding: { horizontal: "0px" }, color: "white" } }}>
-              <Tab label={tab.title} hoverIndicator={true} primary={true} color={tab.color} onClick={() => setActiveIndex(index)} />
+              <Tab className="tabButton" label={tab.title} hoverIndicator={true} primary={true} color={tab.color} onClick={() => setActiveIndex(index)} />
             </ThemeContext.Extend>
           )
         })}
       </TabBar>
-      {/* <Box margin="0px" height="93vh"> */}
-        {tabs[activeIndex].content}
-      {/* </Box> */}
+      {tabs[activeIndex].content}
     </Box>
   );
 };

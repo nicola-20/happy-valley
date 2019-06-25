@@ -1,22 +1,117 @@
 import React from 'react';
-import { Box, Accordion, AccordionPanel, Text } from 'grommet'
+import { Box, Accordion, AccordionPanel, Text, Button, ThemeContext, Markdown, Heading, Paragraph } from 'grommet'
+
 
 const Info = () => {
+  const [activeIndex, setActiveIndex] = React.useState(0)
+  console.log(activeIndex)
+  const infoScreens = [
+    {
+      title: 'info buttons', content:
+        <Box background="neutral-4" fill={true}
+          direction="column"
+          justify="evenly"
+          align="center"
+        >
+          <ThemeContext.Extend value={{
+            button: {
+              primary: {
+                color: "white"
+              },
+              border: { color: "white", width: "0" }, color: "neutral-4", padding: {
+                vertical: "10px", horizontal: "10px"
+              }
+            },
+            text: {
+              medium: {
+                size: "22px",
+              }
+            },
+            paragraph: {
+              medium: {
+                maxWidth: "80vw"
+              }
+            }
+          }}>
+            <Box>
+              <Heading level="2" margin="small" alignSelf="left">
+                Our Mission
+                </Heading>
+              <Paragraph className="mission" margin="none">
+                We celebrate LGBT+ life in Hebden Bridge and surrounding areas. Promoting equality and diversity to eradicate discrimination, based on sexual orientation and gender identity, through education and engagement.
+                  </Paragraph>
+            </Box>
+            <Button className="infoButton" primary={true} label="About Us" onClick={() => setActiveIndex(1)} />
+            <Button className="infoButton" primary={true} label="FAQs" onClick={() => setActiveIndex(2)} />
+            <Button className="infoButton" primary={true} label="Supporters" onClick={() => setActiveIndex(3)} />
+            <Button className="infoButton" primary={true} label="Contact Us" onClick={() => setActiveIndex(4)} />
+          </ThemeContext.Extend>
+        </Box>
+    },
+    {
+      title: 'about us', content:
+        <Box background="neutral-4" fill={true}>
+          <Box direction="row">
+            <Button label="<" plain={true} onClick={() => setActiveIndex(0)} /> <Text>About Us</Text>
+          </Box>
+          <Text>
+            It all started in response to a piece of homophobic graffiti in the Hebden Bridge Town Centre during 2016, now it’s a annual festival bringing people together.
+            Happy Valley Pride was born when local residents witnessed homophobic graffiti sprayed on a piece of tarpaulin by the Hebden Bridge Town Hall, during the summer of 2015. It was a stark reminder that there’s still work to be done – a casual phrase, that has been knocking around school playgrounds for decades, it was none-the-less shocking, simply because it is still in use in our seemingly, tolerant and open-minded community.
+          </Text>
+        </Box>
+    },
+    {
+      title: 'faqs', content:
+        <Box background="neutral-4" fill={true}>
+          <Box direction="row">
+            <Button label="<" plain={true} onClick={() => setActiveIndex(0)} /> <Text>FAQs</Text>
+          </Box>
+          <Accordion>
+            <AccordionPanel label="What is Happy Valley Pride?">
+              <Box pad="medium" background="light-2">
+                <Text>One</Text>
+              </Box>
+            </AccordionPanel>
+            <AccordionPanel label="Where is Happy Valley Pride?">
+              <Box pad="medium" background="light-2">
+                <Text>Two</Text>
+              </Box>
+            </AccordionPanel>
+          </Accordion>
+          <Button label="< back" onClick={() => setActiveIndex(0)} />
+        </Box>
+    },
+    {
+      title: 'supporters', content:
+        <Box background="neutral-4" fill={true}>
+          <Box direction="row">
+            <Button label="<" plain={true} onClick={() => setActiveIndex(0)} /> <Text>Supporters</Text>
+          </Box>
+          <Text>
+          </Text>
+        </Box>
+    },
+    {
+      title: 'contact us', content:
+        <Box background="neutral-4" fill={true}>
+          <Box direction="row">
+            <Button label="<" plain={true} onClick={() => setActiveIndex(0)} /> <Text>Contact Us</Text>
+          </Box>
+          <Text>
+            Email: info@happyvalleypride.com
+            Phone: 01422 400 406
+            Postal:
+              Happy Valley Pride
+              Unit 2D,
+              Beehive Mills
+              Hebble End
+              HX7 6HJ
+          </Text>
+        </Box>
+    },
+  ]
   return (
-    <Box background="neutral-4" fill={true}>
-      <Accordion>
-        <AccordionPanel label="What is Happy Valley Pride?">
-          <Box pad="medium" background="light-2">
-            <Text>One</Text>
-          </Box>
-        </AccordionPanel>
-        <AccordionPanel label="Where is Happy Valley Pride?">
-          <Box pad="medium" background="light-2">
-            <Text>Two</Text>
-          </Box>
-        </AccordionPanel>
-      </Accordion>
-    </Box>
+    infoScreens[activeIndex].content
   );
 };
 
