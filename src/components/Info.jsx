@@ -64,7 +64,7 @@ const Info = () => {
       title: 'about us', content:
         <Box background="neutral-4" fill={true} direction="column"
           align="center">
-          <Box width="80vw" margin={{ top: "large" }} align="center">
+          <Box width="80vw" margin={{ top: "large", bottom: "small" }} align="center">
           <Stack anchor="left" fill="horizontal">
             <Box fill="horizontal" justify="center"><Heading level="2" margin="none" textAlign="center">About Us</Heading></Box>
             <Button label={<Heading level="2" margin={{left: "small"}}>&lt;</Heading>} plain={true} margin="none" onClick={() => setActiveIndex(0)} />
@@ -115,7 +115,6 @@ const Info = () => {
               </Box>
             </AccordionPanel>
           </Accordion>
-          <Button label="< back" onClick={() => setActiveIndex(0)} />
         </Box>
     },
     {

@@ -511,7 +511,7 @@ exports.theme =
           "medium": {
             "size": "34px",
             "height": "40px",
-            "maxWidth": "816px"
+            "maxWidth": "1200px"
           },
           "large": {
             "size": "50px",
