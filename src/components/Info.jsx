@@ -71,19 +71,11 @@ const Info = () => {
       title: 'about us', content:
         <Box background="neutral-4" fill={true} direction="column"
           align="center">
-<<<<<<< HEAD
           <Box width="80vw" margin={{ top: "large" }} align="center">
             <Stack anchor="left" fill="horizontal">
               <Box fill="horizontal" justify="center"><Heading level="2" margin={{top: "medium", bottom: "none", horizontal:"none"}} textAlign="center">About Us</Heading></Box>
               <Button label={<Heading level="2" margin={{ left: "small", bottom: "none", top: "medium" }}>&lt;</Heading>} plain={true} margin="none" onClick={() => setActiveIndex(0)} />
             </Stack>
-=======
-          <Box width="80vw" margin={{ top: "large", bottom: "small" }} align="center">
-          <Stack anchor="left" fill="horizontal">
-            <Box fill="horizontal" justify="center"><Heading level="2" margin="none" textAlign="center">About Us</Heading></Box>
-            <Button label={<Heading level="2" margin={{left: "small"}}>&lt;</Heading>} plain={true} margin="none" onClick={() => setActiveIndex(0)} />
-          </Stack>
->>>>>>> 4a4016786046af0500e64bd64269483e12fc843d
           </Box>
           <ThemeContext.Extend value={{
             // button: {}
@@ -137,21 +129,6 @@ const Info = () => {
               })}
             </Accordion>
           </Box>
-<<<<<<< HEAD
-=======
-          <Accordion>
-            <AccordionPanel label="What is Happy Valley Pride?">
-              <Box pad="medium" background="light-2">
-                <Text>One</Text>
-              </Box>
-            </AccordionPanel>
-            <AccordionPanel label="Where is Happy Valley Pride?">
-              <Box pad="medium" background="light-2">
-                <Text>Two</Text>
-              </Box>
-            </AccordionPanel>
-          </Accordion>
->>>>>>> 4a4016786046af0500e64bd64269483e12fc843d
         </Box>
     },
     {

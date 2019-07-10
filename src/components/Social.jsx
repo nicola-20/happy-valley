@@ -30,7 +30,7 @@ const Social = () => {
             Social Media
           </Heading>
           <Paragraph className="mission" margin="none">
-            Interact with us on social media!                  
+            Interact with us on social media!
           </Paragraph>
         </Box>
         <Icons direction="row" justify="around" width="80vw">
@@ -39,17 +39,31 @@ const Social = () => {
           <SocialIconLink href="https://www.instagram.com/happyvalleypride/" target="_blank" icon={<Instagram color="white" size="large" />} />
         </Icons>
         <Box direction="row" wrap={true} width="80vw" height="80vw" justify="around" align="center">
-        {instagramImages.map((image) => {
-          return (
-        <Box height="35vw" width="35vw">
-            <Image fit="cover" src={image}/>
+          {instagramImages.map((image) => {
+            return (
+              <Box height="35vw" width="35vw">
+                <Image fit="cover" src={image} />
+              </Box>
+            )
+          })}
         </Box>
-          )
-        })}
-        </Box>
+        {/* <Box className='embedsocial-instagram' data-ref="50088bfe78e450750b15d48ce615c1e83463cf82"> </Box> */}
+
+        {/* <div class='embedsocial-instagram' data-ref="50088bfe78e450750b15d48ce615c1e83463cf82"></div>
+        <script src="https://embedsocial.com/embedscript/in.js" async='true'></script> */}
+        {/* <script>(function(d, s, id){var js; if (d.getElementById(id)) {return ;} js = d.createElement(s); js.id = id; js.src = "https://embedsocial.com/embedscript/in.js"; d.getElementsByTagName("head")[0].appendChild(js);}(document, "script", "EmbedSocialInstagramScript"));</script> */}
       </ThemeContext.Extend>
     </Box>
   );
+          // componentDidMount() {
+          //   function getInstagram (d, s, id)
+          //   {var js; 
+          //     if (d.getElementById(id)) {
+          //     return ;
+          //   } 
+          //   js = d.createElement(s); 
+          //   js.id = id; js.src = "https://embedsocial.com/embedscript/in.js"; d.getElementsByTagName("head")[0].appendChild(js);}(document, "script", "EmbedSocialInstagramScript"))
+          // }
 };
 
 export default Social;
