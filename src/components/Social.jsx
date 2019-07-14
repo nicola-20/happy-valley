@@ -11,9 +11,9 @@ const instagramImages = [
   "https://scontent-lhr3-1.cdninstagram.com/vp/31fc17607da505eaff37bef0359f1b4e/5DAA619C/t51.2885-15/e35/66028711_143821710060463_4812017625892234753_n.jpg?_nc_ht=scontent-lhr3-1.cdninstagram.com&se=8"
 ]
 
-const hashtags = [
-  "happyvalleypride", "pride2019", "hebdenbridge"
-]
+// const hashtags = [
+//   "happyvalleypride", "pride2019", "hebdenbridge"
+// ]
 
 const Social = () => {
   return (
@@ -26,11 +26,11 @@ const Social = () => {
         }
       }}>
         <Box margin={{ top: "large", bottom: "large" }} width="80vw">
-          <Heading level="2" alignSelf="left" margin={{ vertical: "medium" }}>
+          <Heading level="2" alignSelf="start" margin={{ vertical: "medium" }}>
             Social Media
           </Heading>
-          <Paragraph className="mission" margin="none">
-            Interact with us on social media!
+          <Paragraph className="top-border-paragraph" margin="none">
+            {/* Interact with us on social media! */}
           </Paragraph>
         </Box>
         <Icons direction="row" justify="around" width="80vw">
@@ -39,9 +39,9 @@ const Social = () => {
           <SocialIconLink href="https://www.instagram.com/happyvalleypride/" target="_blank" icon={<Instagram color="white" size="large" />} />
         </Icons>
         <Box direction="row" wrap={true} width="80vw" height="80vw" justify="around" align="center">
-          {instagramImages.map((image) => {
+          {instagramImages.map((image, index) => {
             return (
-              <Box height="35vw" width="35vw">
+              <Box height="35vw" width="35vw" key={index}>
                 <Image fit="cover" src={image} />
               </Box>
             )

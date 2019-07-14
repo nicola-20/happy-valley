@@ -36,11 +36,11 @@ exports.theme =
         },
         "focus": "#239f95",
         "placeholder": "#AAAAAA",
-        "selected": "#eb5f5d",
-        "text": {
-          "dark": "#f8f8f8",
-          "light": "#444444"
-        },
+        "selected": "#239f95",
+        // "text": {
+        //   "dark": "#f8f8f8",
+        //   "light": "#444444"
+        // },
         "white": "#FFFFFF",
         "accent-1": "#239f95",
         "accent-2": "#c73581",
@@ -715,7 +715,7 @@ exports.theme =
       "options": {
         "box": {
           "align": "start",
-          "pad": "small"
+          "pad": "small",
         },
         "text": {
           "margin": "none"

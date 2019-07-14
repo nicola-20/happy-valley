@@ -1,5 +1,6 @@
 import React from 'react';
-import { Box, Accordion, AccordionPanel, Text, Button, ThemeContext, Markdown, Heading, Paragraph, Image, Stack } from 'grommet'
+import { Box, Accordion, AccordionPanel, Text, Button, ThemeContext, Heading, Paragraph, Image, Stack } from 'grommet'
+
 const supporters = [
   { name: 'The Brunswick Centre', logo: 'https://www.happyvalleypride.co.uk/wp-content/uploads/2015/12/Artboard-8-320x320.png' },
   { name: 'Trades Club', logo: 'https://www.happyvalleypride.co.uk/wp-content/uploads/2015/12/Artboard-7-320x320.png' },
@@ -22,7 +23,7 @@ const FAQs = [
 
 const Info = () => {
   const [activeIndex, setActiveIndex] = React.useState(0)
-  console.log(activeIndex)
+  // console.log(activeIndex)
   const infoScreens = [
     {
       title: 'info buttons', content:
@@ -51,7 +52,7 @@ const Info = () => {
             }
           }}>
             <Box margin={{top: "large", bottom: "large"}}>
-              <Heading level="2" alignSelf="left" margin={{vertical: "medium"}}>
+              <Heading level="2" alignSelf="start" margin={{vertical: "medium"}}>
                 Our Mission
                 </Heading>
               <Paragraph className="top-border-paragraph" margin="none">
@@ -72,7 +73,7 @@ const Info = () => {
         <Box background="neutral-4" fill={true} direction="column"
           align="center">
           <Box width="80vw" margin={{ top: "large" }} align="center">
-            <Stack anchor="left" fill="horizontal">
+            <Stack anchor="left" fill={true}>
               <Box fill="horizontal" justify="center"><Heading level="2" margin={{top: "medium", bottom: "none", horizontal:"none"}} textAlign="center">About Us</Heading></Box>
               <Button label={<Heading level="2" margin={{ left: "small", bottom: "none", top: "medium" }}>&lt;</Heading>} plain={true} margin="none" onClick={() => setActiveIndex(0)} />
             </Stack>
@@ -111,16 +112,16 @@ const Info = () => {
             <Button label="<" plain={true} onClick={() => setActiveIndex(0)} /> <Text>FAQs</Text>
           </Box> */}
           <Box width="80vw" margin={{ top: "large" }} align="center">
-            <Stack anchor="left" fill="horizontal">
+            <Stack anchor="left" fill={true}>
               <Box fill="horizontal" justify="center"><Heading level="2" margin={{top: "medium", bottom: "none", horizontal:"none"}} textAlign="center">FAQs</Heading></Box>
               <Button label={<Heading level="2" margin={{ left: "small", bottom: "none", top: "medium" }}>&lt;</Heading>} plain={true} margin="none" onClick={() => setActiveIndex(0)} />
             </Stack>
           </Box>
           <Box width="80vw">
             <Accordion className="top-border-paragraph" margin={{"vertical": "medium", "horizontal": "none"}}>
-              {FAQs.map((FAQ) => {
+              {FAQs.map((FAQ, index) => {
                 return (
-                  <AccordionPanel label={FAQ.question}>
+                  <AccordionPanel label={FAQ.question} key={index}>
                     <Box pad="medium" background="light-2">
                       <Text>{FAQ.answer}</Text>
                     </Box>
@@ -138,15 +139,15 @@ const Info = () => {
             <Button label="<" plain={true} onClick={() => setActiveIndex(0)} /> <Text>Supporters</Text>
           </Box> */}
           <Box width="80vw" margin={{ top: "large" }} align="center">
-            <Stack anchor="left" fill="horizontal">
+            <Stack anchor="left" fill={true}>
               <Box fill="horizontal" justify="center"><Heading level="2" margin="none" textAlign="center">Supporters</Heading></Box>
               <Button label={<Heading level="2" margin={{ left: "small", bottom: "none" }}>&lt;</Heading>} plain={true} margin="none" onClick={() => setActiveIndex(0)} />
             </Stack>
           </Box>
           <Box direction="row" wrap={true} align="center" alignContent="around" justify="around" overflow="scroll">
-            {supporters.map((supporter) => {
+            {supporters.map((supporter, index) => {
               return (
-                <Box height="small" width="small" margin={{ vertical: "small", horizontal: "medium" }} >
+                <Box key={index} height="small" width="small" margin={{ vertical: "small", horizontal: "medium" }} >
                   <Image fit="contain" src={supporter.logo} a11yTitle={supporter.name} />
                 </Box>
 

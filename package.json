@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@reach/router": "^1.2.1",
+    "contentful": "^7.8.1",
     "grommet": "^2.7.1",
     "grommet-icons": "^4.2.0",
     "react": "^16.8.6",

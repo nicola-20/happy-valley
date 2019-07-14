@@ -1,5 +1,7 @@
 import React from 'react';
-import { Box, Button, Image, Clock } from 'grommet';
+import { Box, Button, Image, 
+  // Clock 
+} from 'grommet';
 
 const SplashScreen = (props) => {
   const { hideSplashScreen } = props
