@@ -108,9 +108,6 @@ const Info = () => {
     {
       title: 'faqs', content:
         <Box background="neutral-4" fill={true} direction="column" align="center">
-          {/* <Box direction="row">
-            <Button label="<" plain={true} onClick={() => setActiveIndex(0)} /> <Text>FAQs</Text>
-          </Box> */}
           <Box width="80vw" margin={{ top: "large" }} align="center">
             <Stack anchor="left" fill={true}>
               <Box fill="horizontal" justify="center"><Heading level="2" margin={{top: "medium", bottom: "none", horizontal:"none"}} textAlign="center">FAQs</Heading></Box>
@@ -135,16 +132,13 @@ const Info = () => {
     {
       title: 'supporters', content:
         <Box background="neutral-4" fill={true} direction="column" align="center">
-          {/* <Box direction="row">
-            <Button label="<" plain={true} onClick={() => setActiveIndex(0)} /> <Text>Supporters</Text>
-          </Box> */}
           <Box width="80vw" margin={{ top: "large" }} align="center">
             <Stack anchor="left" fill={true}>
-              <Box fill="horizontal" justify="center"><Heading level="2" margin="none" textAlign="center">Supporters</Heading></Box>
-              <Button label={<Heading level="2" margin={{ left: "small", bottom: "none" }}>&lt;</Heading>} plain={true} margin="none" onClick={() => setActiveIndex(0)} />
+              <Box fill="horizontal" justify="center"><Heading level="2" margin={{top: "medium", bottom: "none", horizontal:"none"}}  textAlign="center">Supporters</Heading></Box>
+              <Button label={<Heading level="2" margin={{ left: "small", bottom: "none", top: "medium" }}>&lt;</Heading>} plain={true} margin="none" onClick={() => setActiveIndex(0)} />
             </Stack>
           </Box>
-          <Box direction="row" wrap={true} align="center" alignContent="around" justify="around" overflow="scroll">
+          <Box direction="row" width="80vw" height="80vh" className="top-border-paragraph" wrap={true} align="center" alignContent="around" justify="around" overflow="scroll" margin={{"vertical": "medium", "horizontal": "none"}}>
             {supporters.map((supporter, index) => {
               return (
                 <Box key={index} height="small" width="small" margin={{ vertical: "small", horizontal: "medium" }} >
@@ -158,21 +152,27 @@ const Info = () => {
     },
     {
       title: 'contact us', content:
-        <Box background="neutral-4" fill={true}>
-          <Box direction="row">
-            <Button label="<" plain={true} onClick={() => setActiveIndex(0)} /> <Text>Contact Us</Text>
-          </Box>
-          <Text>
-            Email: info@happyvalleypride.com
-            Phone: 01422 400 406
-            Postal:
-              Happy Valley Pride
-              Unit 2D,
-              Beehive Mills
-              Hebble End
-              HX7 6HJ
-          </Text>
+        <Box background="neutral-4" fill={true} direction="column" align="center">
+        <Box width="80vw" margin={{ top: "large" }} align="center">
+          <Stack anchor="left" fill={true}>
+            <Box fill="horizontal" justify="center"><Heading level="2" margin={{top: "medium", bottom: "none", horizontal:"none"}}  textAlign="center">Contact Us</Heading></Box>
+            <Button label={<Heading level="2" margin={{ left: "small", bottom: "none", top: "medium" }}>&lt;</Heading>} plain={true} margin="none" onClick={() => setActiveIndex(0)} />
+          </Stack>
         </Box>
+        <Box width="80vw" height="80vh" direction="column " overflow="scroll" className="top-border-paragraph" margin={{"vertical": "medium", "horizontal": "none"}}>
+          <Heading level="5" margin={{top: "large", bottom: "small", horizontal: "none"}}>Email:</Heading>
+          <Paragraph margin="none">info@happyvalleypride.com</Paragraph>
+          <Heading level="5" margin={{top: "large", bottom: "small", horizontal: "none"}}>Phone:</Heading>
+          <Paragraph margin="none">01422 400 406</Paragraph>
+          <Heading level="5" margin={{top: "large", bottom: "small", horizontal: "none"}}>Postal:</Heading>
+          <Paragraph margin="none">Happy Valley Pride <br/>
+              Unit 2D, <br/>
+              Beehive Mills <br/>
+              Hebble End <br/>
+              HX7 6HJ
+          </Paragraph>
+        </Box>
+      </Box>
     },
   ]
   return (

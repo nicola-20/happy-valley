@@ -11,6 +11,33 @@ p {
 }
 
 .top-border-paragraph {
-  border-top: solid 2px;
+  border-top: solid 2px white;
   padding-top: 10px;
+}
+
+.event-title {
+  font-size: 21px;
+  height: 60px;
+}
+
+.more-info {
+  width: 50%;
+  margin: 10px auto;
+  background-color: #239f95;
+  border-color: #239f95;
+}
+
+.event-date {
+  font-weight: 600;
+  font-size: 19px;
+  /* color: #6d4189; */
+}
+
+.event-time {
+  font-weight: 800;
+}
+
+.gXhKtq {
+  fill: white;
+  stroke: white;
 }

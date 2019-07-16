@@ -19,7 +19,7 @@ const EventOverlay = ({ event, closeOverlay }) => {
   const time = dateTime.split(' ')[4].slice(0, -3)
 
   return (
-    <Box pad="medium" overflow="scroll" height="80vh" width="90vw">
+    <Box pad="medium" overflow="scroll" height="80vh" width="90vw" round={true}>
       <Heading level="1" color="brand" textAlign="start" margin={{ bottom: "medium", top: "none" }}>{event.title}</Heading>
       <Box direction="row">
         <ThemeContext.Extend value={{

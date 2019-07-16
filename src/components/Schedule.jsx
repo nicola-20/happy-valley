@@ -133,7 +133,7 @@ const Schedule = () => {
         </Box>
       </ThemeContext.Extend>
 
-      <Box width="80vw" direction="column" overflow="scroll" margin="medium" height="80vh">
+      <Box width="80vw" direction="column" overflow="scroll" margin={{bottom: "large", top: "small"}} height="75vh">
 
         {events.map((event, index) => {
           const dateTime = event.date_time.toUTCString()
@@ -152,11 +152,11 @@ const Schedule = () => {
 
               <Box direction="column" background="white" height="25vh" round="medium" margin={{ top: "medium", bottom: "medium" }} pad="medium">
 
-                <Heading level="3" margin="none">{event.title}</Heading>
+                <Heading className="event-title" level="3" margin="none">{event.title}</Heading>
                 <Text>{event.venue}</Text>
-                <Text>{dayOfWeek} {date} {time}</Text>
+                <Text className="event-date">{dayOfWeek} {date} <Text className="event-time">{time}</Text></Text>
 
-                <Button label="more info" onClick={() => setShowEvent(event.title)} />
+                <Button className="more-info" label="more info" primary={true} onClick={() => setShowEvent(event.title)} />
 
                 {showEvent === event.title && (
                   <Layer
