@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, ThemeContext, Paragraph, Heading, Layer, Text } from "grommet";
 import { fetchEvents } from '../api.js'
 import MapImage from './MapImage.js';
+import GoogleMapContainer from './GoogleMap.jsx';
 
 const Map = () => {
   const [events, setEvents] = React.useState([])
@@ -72,8 +73,9 @@ const Map = () => {
         </Layer>
       )}
 
-      <Box background="white" height="65vh" width="80vw" margin="auto" round={true}>
-        <MapImage handleMarkerClick={handleMarkerClick} />
+      <Box background="white" height="65vh" width="80vw" margin="auto" round={true} id="map-holder">
+        {/* <MapImage handleMarkerClick={handleMarkerClick} /> */}
+        <GoogleMapContainer events={events} handleMarkerClick={handleMarkerClick}/>
       </Box>
     </Box>
   );

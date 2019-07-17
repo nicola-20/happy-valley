@@ -10,16 +10,15 @@ const SplashScreen = (props) => {
       full={true}
       height="100vh"
     >
-      <Button
+      {/* <Button
         alignSelf="center"
         label="Enter App"
         onClick={hideSplashScreen}
         primary={true}
         hoverIndicator={true}
         margin="medium"
-      />
-      {/* <Clock time={Date.UTC(2019, 6, 22, 19, 0) - Date.now()} type="digital" run="backward"/> */}
-      <Image fit="contain" src="/assets/campaign2019.jpg" />
+      /> */}
+      <Image onClick={hideSplashScreen} hoverIndicator={true} fit="contain" src="/assets/campaign2019.jpg" />
     </Box>
   );
 };

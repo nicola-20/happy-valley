@@ -41,3 +41,12 @@ p {
   fill: white;
   stroke: white;
 }
+
+#map-holder > div {
+  height: 100%;
+  width: 100%
+}
+
+#map-holder > div > div {
+  position: relative !important;
+}
