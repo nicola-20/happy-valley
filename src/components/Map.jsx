@@ -3,6 +3,8 @@ import { Box, ThemeContext, Paragraph, Heading, Layer, Text } from "grommet";
 import { fetchEvents } from '../api.js'
 import MapImage from './MapImage.js';
 import GoogleMapContainer from './GoogleMap.jsx';
+import { REACT_APP_GOOGLE_MAPS_API_KEY } from '../config'
+
 
 const Map = () => {
   const [events, setEvents] = React.useState([])
@@ -59,7 +61,7 @@ const Map = () => {
               const date = `${dateTime.split(', ')[1].split(' ')[0]} ${dateTime.split(', ')[1].split(' ')[1]}`
               const time = dateTime.split(' ')[4].slice(0, -3)
               return (
-                <Box margin={{vertical: "medium"}} height="30vh">
+                <Box margin={{ vertical: "medium" }} height="30vh">
                   <Heading level="2" color="status-warning" margin="none">{event.title}
                   </Heading>
                   <Text className="event-date">{dayOfWeek} {date} <Text className="event-time">
@@ -73,9 +75,16 @@ const Map = () => {
         </Layer>
       )}
 
-      <Box background="white" height="65vh" width="80vw" margin="auto" round={true} id="map-holder">
+      <Box background="white" height="70vh" width="80vw" margin="auto" round={true} id="map-holder">
         {/* <MapImage handleMarkerClick={handleMarkerClick} /> */}
-        <GoogleMapContainer events={events} handleMarkerClick={handleMarkerClick}/>
+        {/* <GoogleMapContainer events={events} handleMarkerClick={handleMarkerClick}/> */}
+        <GoogleMapContainer
+          events={events}
+          googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${REACT_APP_GOOGLE_MAPS_API_KEY}`}
+          loadingElement={<div style={{ height: `100%` }} />}
+          containerElement={<div style={{ height: `100%`, border: 'solid 0px black', borderRadius: '20px' }} />}
+          mapElement={<div style={{ height: `100%`, border: 'solid 0px red', borderRadius: '20px' }} />}
+        />
       </Box>
     </Box>
   );
