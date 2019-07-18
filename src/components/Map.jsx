@@ -4,7 +4,7 @@ import { fetchEvents } from '../api.js'
 // import MapImage from './MapImage.js';
 import GoogleMapContainer from './GoogleMap.jsx';
 // const { REACT_APP_GOOGLE_MAPS_API_KEY } from '../config'
-const { REACT_APP_GOOGLE_MAPS_API_KEY } = process.env.NODE_ENV === 'production' ? process.env : require('./config');
+const { REACT_APP_GOOGLE_MAPS_API_KEY } = process.env.NODE_ENV === 'production' ? process.env : require('../config');
 
 
 
