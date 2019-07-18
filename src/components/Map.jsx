@@ -1,17 +1,17 @@
 import React from 'react';
 import { Box, ThemeContext, Paragraph, Heading, Layer, Text } from "grommet";
 import { fetchEvents } from '../api.js'
-import MapImage from './MapImage.js';
+// import MapImage from './MapImage.js';
 import GoogleMapContainer from './GoogleMap.jsx';
-import { REACT_APP_GOOGLE_MAPS_API_KEY } from '../config'
+// const { REACT_APP_GOOGLE_MAPS_API_KEY } from '../config'
+const { REACT_APP_GOOGLE_MAPS_API_KEY } = process.env.NODE_ENV === 'production' ? process.env : require('./config');
+
 
 
 const Map = () => {
   const [events, setEvents] = React.useState([])
 
   const [venue, setVenue] = React.useState(null)
-
-  console.log(events)
 
   React.useEffect(() => {
     fetchEvents().then(({ items }) => {
@@ -23,9 +23,9 @@ const Map = () => {
       }))
     })
   }, [])
-  const handleMarkerClick = (venue) => {
-    setVenue(venue)
-  }
+  // const handleMarkerClick = (venue) => {
+  //   setVenue(venue)
+  // }
   return (
     <Box background="status-warning" fill={true} align="center">
 
