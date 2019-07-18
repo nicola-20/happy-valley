@@ -47,6 +47,19 @@ p {
   width: 100%
 }
 
-#map-holder > div > div {
+/* #map-holder > div > div {
   position: relative !important;
+} */
+
+.venue-title {
+  font-size: 24px;
+}
+.gm-style {
+  font-family: 'Raleway', 'Roboto', sans-serif;
+}
+.gm-style-iw-d {
+  max-width: 250px !important;
+}
+.gm-style-iw {
+  max-width: 250px !important;
 }
