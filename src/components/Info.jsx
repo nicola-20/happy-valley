@@ -52,7 +52,7 @@ const Info = () => {
             }
           }}>
             <Box margin={{top: "large", bottom: "large"}}>
-              <Heading level="2" alignSelf="start" margin={{vertical: "medium"}}>
+              <Heading level="2" alignSelf="start" margin={{vertical: "small"}}>
                 Our Mission
                 </Heading>
               <Paragraph className="top-border-paragraph" margin="none">

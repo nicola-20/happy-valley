@@ -15,6 +15,11 @@ p {
   padding-top: 10px;
 }
 
+.entry-logo:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
 .event-title {
   font-size: 21px;
   height: 60px;
@@ -30,7 +35,6 @@ p {
 .event-date {
   font-weight: 600;
   font-size: 19px;
-  /* color: #6d4189; */
 }
 
 .event-time {
@@ -38,17 +42,13 @@ p {
 }
 
 .gXhKtq {
-  fill: white;
-  stroke: white;
+  fill: #239f95;
+  stroke: #239f95;
 }
 
-#map-holder > div {
+/* #map-holder > div {
   height: 100%;
   width: 100%
-}
-
-/* #map-holder > div > div {
-  position: relative !important;
 } */
 
 .venue-title {

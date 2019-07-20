@@ -26,7 +26,7 @@ const Social = () => {
         }
       }}>
         <Box margin={{ top: "large", bottom: "large" }} width="80vw">
-          <Heading level="2" alignSelf="start" margin={{ vertical: "medium" }}>
+          <Heading level="2" alignSelf="start" margin={{ vertical: "small" }}>
             Social Media
           </Heading>
           <Paragraph className="top-border-paragraph" margin="none">

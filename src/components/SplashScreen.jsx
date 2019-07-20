@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-  Box, Button, Image,
-  // Clock 
-} from 'grommet';
+import { Box, Box as ImageContainer, Image } from 'grommet';
 
 const SplashScreen = (props) => {
   const { hideSplashScreen } = props
@@ -10,17 +7,20 @@ const SplashScreen = (props) => {
     <Box
       full={true}
       height="100vh"
+      direction="column"
+      align="center"
+      justify="around"
+      pad={{ vertical: "large" }}
     >
-      {/* <Button
-        alignSelf="center"
-        label="Enter App"
-        onClick={hideSplashScreen}
-        primary={true}
-        hoverIndicator={true}
-        margin="medium"
-      /> */}
-      {/* <Image onClick={hideSplashScreen} hoverIndicator={true} fit="contain" src="/assets/campaign2019.jpg" /> */}
-      <Image onClick={hideSplashScreen} hoverIndicator={true} fit="cover" src="/assets/HappyValleyPrideCover_v1.jpeg" />
+      <ImageContainer height="15vh">
+        <Image fit="contain" src="/assets/welcome2.png" />
+      </ImageContainer>
+      <ImageContainer height="40vh">
+        <Image className="entry-logo" onClick={hideSplashScreen} hoverIndicator={true} fit="contain" src="/assets/welcome-logo.png" />
+      </ImageContainer>
+      <ImageContainer height="20vh">
+        <Image fit="contain" src="/assets/date.png" />
+      </ImageContainer>
     </Box>
   );
 };
