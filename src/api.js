@@ -7,11 +7,16 @@ const client = contentful.createClient({
 });
 
 exports.fetchEvents = (day, category) => {
-  const query = { content_type: "event", select: "fields" }
+  const query = { content_type: "event", select: "fields", order: 'fields.date_time' }
   if (category && category !== "Category") query['fields.type'] = category
   if (day && day !== "Day") {
     query['fields.date_time[lte]'] = day.endDate
     query['fields.date_time[gte]'] = day.startDate
   }
+  return client.getEntries(query)
+};
+
+exports.fetchInstagramImages = () => {
+  const query = { content_type: "instagram_images", select: "fields" }
   return client.getEntries(query)
 };

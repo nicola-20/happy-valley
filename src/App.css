@@ -6,7 +6,7 @@
   width: 40vw;
 }
 
-p {
+p, h4 {
   text-align: justify;
 }
 
@@ -30,6 +30,14 @@ p {
   margin: 10px auto;
   background-color: #239f95;
   border-color: #239f95;
+}
+.eTjQQf {
+  background-color: #239f95;
+  border-color: #239f95;
+}
+
+.back-event {
+  width: 70%;
 }
 
 .event-date {

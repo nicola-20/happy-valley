@@ -21,7 +21,7 @@ const Map = () => {
     <Box background="status-warning" fill={true} align="center">
       <PageHeader title="Map" paragraph="Click on a venue marker to find events!" />
       <Box width="85vw" height="80vh" direction="column" align="center" justify="center">
-        <Box background="white" height="75vh" margin={{ vertical: "small" }} width="85vw" round={true} id="map-holder">
+        <Box background="white" height="75vh" margin={{ vertical: "large" }} width="85vw" round={true} id="map-holder">
           <GoogleMapContainer
             events={events}
             googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${REACT_APP_GOOGLE_MAPS_API_KEY}`}

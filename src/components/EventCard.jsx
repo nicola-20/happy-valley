@@ -24,7 +24,7 @@ const EventCard = ({ event, showEvent, setShowEvent }) => {
         <Heading className="event-title" level="3" margin="none">{event.title}</Heading>
         <Text>{event.venue}</Text>
         <Text className="event-date">{convertDate(event.date_time)}</Text>
-        <Button className="more-info" label="more info" primary={true} onClick={() => setShowEvent(event.title)} />
+        <Button className="more-info" label="more info" hoverIndicator={false} color="#239f95" margin={{ vertical: "none", horizontal: "auto" }} primary={true} onClick={() => setShowEvent(event.title)} />
         {showEvent === event.title && (
           <Layer
             onClickOutside={() => setShowEvent(false)}
