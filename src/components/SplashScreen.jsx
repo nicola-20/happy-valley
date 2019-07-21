@@ -1,10 +1,10 @@
 import React from 'react';
-import { Box, Box as ImageContainer, Image } from 'grommet';
+import { Box as Page, Box as ImageContainer, Image } from 'grommet';
 
 const SplashScreen = (props) => {
   const { hideSplashScreen } = props
   return (
-    <Box
+    <Page
       full={true}
       height="100vh"
       direction="column"
@@ -21,7 +21,7 @@ const SplashScreen = (props) => {
       <ImageContainer height="20vh">
         <Image fit="contain" src="/assets/date.png" />
       </ImageContainer>
-    </Box>
+    </Page>
   );
 };
 

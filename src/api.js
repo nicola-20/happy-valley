@@ -6,17 +6,46 @@ const client = contentful.createClient({
   accessToken: REACT_APP_ACCESS_TOKEN
 });
 
-exports.fetchEvents = (day, category) => {
+const getEvents = async (day, category) => {
   const query = { content_type: "event", select: "fields", order: 'fields.date_time' }
   if (category && category !== "Category") query['fields.type'] = category
   if (day && day !== "Day") {
     query['fields.date_time[lte]'] = day.endDate
     query['fields.date_time[gte]'] = day.startDate
   }
-  return client.getEntries(query)
+  const results = await client.getEntries(query)
+  return results.items.map(({ fields: { date_time, ...eventInfo } }) => {
+    return {
+      date_time: new Date(date_time),
+      ...eventInfo
+    }
+  })
 };
 
-exports.fetchInstagramImages = () => {
+const getInstagramImages = async () => {
   const query = { content_type: "instagram_images", select: "fields" }
-  return client.getEntries(query)
+  const results = await client.getEntries(query)
+  return results.items.map(({ fields }) => { return fields })
 };
+
+const getFAQs = async () => {
+  const query = { content_type: "faq", select: "fields", order: 'fields.id' }
+  const results = await client.getEntries(query)
+  return results.items.map(({ fields }) => { return fields })
+}
+
+const getHashtags = async () => {
+  const query = { content_type: "hashtag", select: "fields" }
+  const results = await client.getEntries(query)
+  return results.items.map(({ fields }) => { return fields })
+}
+
+const getSupporters = async () => {
+  const query = { content_type: "supporter", select: "fields" }
+  const results = await client.getEntries(query)
+  return results.items.map(({ fields }) => { return fields })
+}
+
+export {
+  getEvents, getInstagramImages, getFAQs, getHashtags, getSupporters
+}

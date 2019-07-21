@@ -176,8 +176,7 @@ exports.theme =
       "font": {
         "family": "Raleway",
         "size": "18px",
-        "height": "24px",
-        "maxWidth": "432px"
+        "height": "24px"
       },
       "hover": {
         "background": {
@@ -551,23 +550,19 @@ exports.theme =
           "font": {},
           "small": {
             "size": "18px",
-            "height": "24px",
-            "maxWidth": "432px"
+            "height": "24px"
           },
           "medium": {
             "size": "18px",
-            "height": "24px",
-            "maxWidth": "432px"
+            "height": "24px"
           },
           "large": {
             "size": "18px",
-            "height": "24px",
-            "maxWidth": "432px"
+            "height": "24px"
           },
           "xlarge": {
             "size": "18px",
-            "height": "24px",
-            "maxWidth": "432px"
+            "height": "24px"
           }
         },
         "5": {
@@ -649,7 +644,6 @@ exports.theme =
       "medium": {
         "size": "18px",
         "height": "24px",
-        "maxWidth": "432px"
       },
       "large": {
         "size": "22px",
@@ -814,7 +808,6 @@ exports.theme =
       "medium": {
         "size": "18px",
         "height": "24px",
-        "maxWidth": "432px"
       },
       "large": {
         "size": "22px",

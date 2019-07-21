@@ -1,15 +1,14 @@
-// import { REACT_APP_GOOGLE_MAPS_API_KEY } from '../config'
-// const { REACT_APP_SPACE_ID, REACT_APP_ACCESS_TOKEN } = process.env.NODE_ENV === 'production' ? process.env : require('./config');
-import React, { Component } from 'react';
-import { Box, Heading, Text, ThemeContext } from 'grommet';
-// import { Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react';
-
+import React from 'react';
+import { Box as VenuePopUp, Box as Event, Heading as VenueTitle, Heading, Text, ThemeContext } from 'grommet';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps'
+import { convertDate } from '../utils'
 
 const styles = require('../styling/GoogleMapStylesGrey.json')
 
 const GoogleMapComponentWithMarker = withScriptjs(
   withGoogleMap(props => {
+    const locations = [];
+
     const [showInfoWindow, setShowInfoWindow] = React.useState(false)
     const [activeMarker, setActiveMarker] = React.useState({})
 
@@ -41,10 +40,15 @@ const GoogleMapComponentWithMarker = withScriptjs(
           styles: styles
         }}
       >
+        {props.events.forEach((event) => {
+          if (!locations.includes({ venue: event.venue, location: event.location })) {
+            locations.push({ venue: event.venue, location: event.location })
+          }
+        })}
         {props.events.map((event) => {
           return (
             <Marker
-              key={event.title}
+              key={event.venue}
               position={{ lat: event.location.lat, lng: event.location.lon }}
               onClick={() => { onMarkerClick(event.venue, event.location) }}
               icon={{
@@ -62,15 +66,11 @@ const GoogleMapComponentWithMarker = withScriptjs(
             lng: activeMarker.location.lon
           }}
         >
-          <Box overflow="scroll" height="40vh" width="50vh" pad="none">
-              <Heading level="2" margin={{ vertical: "small", horizontal: "none" }} className="venue-title">{activeMarker.venue}</Heading>
+          <VenuePopUp overflow="scroll" height="40vh" width="50vh" pad="none">
+            <VenueTitle level="2" margin={{ vertical: "small", horizontal: "none" }} className="venue-title">{activeMarker.venue}</VenueTitle>
             {props.events.filter((event) => event.venue === activeMarker.venue).map((event) => {
-              const dateTime = event.date_time.toUTCString()
-              const dayOfWeek = new Intl.DateTimeFormat('en-GB', { weekday: 'long' }).format(event.date_time)
-              const date = `${dateTime.split(', ')[1].split(' ')[0]} ${dateTime.split(', ')[1].split(' ')[1]}`
-              const time = dateTime.split(' ')[4].slice(0, -3)
               return (
-                <Box key={event.title} margin={{ vertical: "none" }} pad={{ vertical: "small" }} height="30vh" border="top">
+                <Event key={event.title} margin={{ vertical: "none" }} pad={{ vertical: "small" }} height="30vh" border="top">
                   <Heading level="6" color="status-warning" margin="none">{event.title}
                   </Heading>
                   <ThemeContext.Extend value={{
@@ -78,15 +78,12 @@ const GoogleMapComponentWithMarker = withScriptjs(
                       extend: 'font-size: 18px'
                     }
                   }}>
-                    <Text>{dayOfWeek} {date} <Text>
-                      {time}
-                    </Text>
-                    </Text>
+                    <Text>{convertDate(event.date_time)}</Text>
                   </ThemeContext.Extend>
-                </Box>
+                </Event>
               )
             })}
-          </Box>
+          </VenuePopUp>
         </InfoWindow>}
       </GoogleMap>
     )

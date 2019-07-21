@@ -36,7 +36,7 @@ const EventFilter = ({ categories, category, day, setCategory, setDay }) => {
         select: {
           background: "white",
           control: {
-            extend: "padding: 5px 6px 5px 6px; background-color: white; width: 40vw;",
+            extend: "padding: 5px 6px 5px 6px; background-color: white; width: 42vw;",
             open: {
               background: "#ece0fa",
               border: "1px solid #7D4CDB"
@@ -53,7 +53,7 @@ const EventFilter = ({ categories, category, day, setCategory, setDay }) => {
           icon={true}
           multiple={false}
           value={day}
-          margin={{ right: "5vw" }}
+          margin={{ right: "3vw" }}
           onChange={({ option }) => setDay(option)}
         />
         <Select
