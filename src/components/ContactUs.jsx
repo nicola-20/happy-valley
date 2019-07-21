@@ -11,6 +11,9 @@ const ContactUs = ({ setActiveIndex }) => {
         <Paragraph margin="none">info@happyvalleypride.com</Paragraph>
         <Heading level="5" margin={{ top: "large", bottom: "small", horizontal: "none" }}>Phone:</Heading>
         <Paragraph margin="none">01422 400 406</Paragraph>
+        <Paragraph margin="none">The above number is an answer phone.
+        <br/>
+        If you need to contact us urgently, please use social media!</Paragraph>
         <Heading level="5" margin={{ top: "large", bottom: "small", horizontal: "none" }}>Postal:</Heading>
         <Paragraph margin="none">Happy Valley Pride <br />
           Unit 2D, <br />
