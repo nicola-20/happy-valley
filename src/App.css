@@ -4,6 +4,11 @@
 
 .infoButton {
   width: 40vw;
+  text-align: center;
+}
+
+.hashtag {
+  color: white;
 }
 
 p, h4 {

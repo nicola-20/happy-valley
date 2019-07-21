@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box as Page, Box as Content, Box as Icons, Box as Hashtags, Anchor as SocialIconLink, Box as ImageContainer, Box as InstagramImages, Heading as Hashtag, ThemeContext, Image } from 'grommet'
+import { Box as Page, Box as Content, Box as Icons, Box as Hashtags, Anchor as SocialIconLink, Box as ImageContainer, Box as InstagramImages, Heading as Hashtag, ThemeContext, Image, Anchor } from 'grommet'
 import { Facebook, Twitter, Instagram } from 'grommet-icons'
 import PageHeader from './PageHeader';
 import { getInstagramImages, getHashtags } from '../api'
@@ -47,8 +47,8 @@ const Social = () => {
         </InstagramImages>
         <Hashtags direction="row" wrap={true} justify="center" overflow="scroll" height="15vh">
           {hashtags.map(({ hashtag }) => {
-            return <Hashtag level="3" margin="none">#{hashtag}</Hashtag>
-          })}
+            return <Anchor target="_blank" href={`https://www.instagram.com/explore/tags/${hashtag}/`}><Hashtag className="hashtag" level="3" margin={{ vertical: "none", horizontal: "small" }}>#{hashtag}</Hashtag></Anchor>
+        })}
         </Hashtags>
       </Content>
     </Page>

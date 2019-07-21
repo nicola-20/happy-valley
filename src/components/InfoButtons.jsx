@@ -32,8 +32,9 @@ const InfoButtons = ({ setActiveIndex }) => {
         <InfoButtonsContainer direction="column" justify="evenly" align="center" height="70vh">
           <InfoButton className="infoButton" primary={true} label="About Us" onClick={() => setActiveIndex(1)} />
           <InfoButton className="infoButton" primary={true} label="FAQs" onClick={() => setActiveIndex(2)} />
+          <InfoButton className="infoButton" primary={true} label="Merchandise" target="_blank" href="https://www.happyvalleypride.co.uk/shop/" />
           <InfoButton className="infoButton" primary={true} label="Supporters" onClick={() => setActiveIndex(3)} />
-          <InfoButton className="infoButton" primary={true} label="Contact Us" onClick={() => setActiveIndex(4)} />
+          <InfoButton className="infoButton" primary={true} label="Contact Us" onClick={() => setActiveIndex(4)} /> 
         </InfoButtonsContainer>
       </ThemeContext.Extend>
     </Page>
