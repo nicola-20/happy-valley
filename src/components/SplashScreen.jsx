@@ -10,7 +10,7 @@ const SplashScreen = (props) => {
       direction="column"
       align="center"
       justify="around"
-      pad={{ vertical: "large" }}
+      pad={{ vertical: "xlarge" }}
     >
       <ImageContainer height="15vh">
         <Image fit="contain" src="/assets/welcome2.png" />
