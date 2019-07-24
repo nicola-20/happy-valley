@@ -63,6 +63,10 @@ p, h4 {
   stroke: #239f95;
 }
 
+.map-eventpopup {
+  min-height: 10vh;
+}
+
 .StyledIcon-ofa7kd-0 {
   fill: white;
   stroke: white;

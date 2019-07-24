@@ -70,7 +70,7 @@ const GoogleMapComponentWithMarker = withScriptjs(
             <VenueTitle level="2" margin={{ vertical: "small", horizontal: "none" }} className="venue-title">{activeMarker.venue}</VenueTitle>
             {props.events.filter((event) => event.venue === activeMarker.venue).map((event) => {
               return (
-                <Event key={event.title} margin={{ vertical: "none" }} pad={{ vertical: "small" }} height="30vh" border="top">
+                <Event className="map-eventpopup" key={event.title} margin={{ vertical: "none" }} pad={{ vertical: "small" }} height="10vh" border="top">
                   <Heading level="6" color="status-warning" margin="none">{event.title}
                   </Heading>
                   <ThemeContext.Extend value={{
